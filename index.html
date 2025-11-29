@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALKAVALI MADSLAVE - Official Musician Website</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font import for a professional look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom gold/accent color */
+        .text-accent { color: #facc15; }
+        .bg-accent-light { background-color: #facc15; }
+        .border-accent { border-color: #facc15; }
+
+        /* Smooth scroll margin for fixed header */
+        :target {
+            scroll-margin-top: 5rem;
+        }
+        /* Style for the fixed header */
+        .header-fixed {
+            backdrop-filter: blur(10px);
+            background-color: rgba(17, 24, 39, 0.8); /* bg-gray-900 with opacity */
+        }
+
+        /* Basic keyframe for a subtle hover pulse on album art */
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 5px rgba(250, 202, 21, 0.4); }
+            50% { box-shadow: 0 0 15px rgba(250, 202, 21, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(250, 202, 21, 0.4); }
+        }
+        .music-item:hover .album-cover {
+            animation: pulse-shadow 1.5s infinite alternate;
+            transform: scale(1.02);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="header-fixed fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-bold playfair text-white hover:text-accent transition duration-300">
+                ALKAVALI <span class="text-accent">MADSLAVE</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#bio" class="hover:text-accent transition duration-300">Bio</a>
+                <a href="#music" class="hover:text-accent transition duration-300">Music</a>
+                <a href="#tour" class="hover:text-accent transition duration-300">Tour</a>
+                <a href="#contact" class="hover:text-accent transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-gray-700 transition duration-300">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+            <nav class="flex flex-col space-y-2 p-4 text-center text-lg">
+                <a href="#bio" class="block py-2 hover:text-accent hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeMobileMenu()">Bio</a>
+                <a href="#music" class="block py-2 hover:text-accent hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeMobileMenu()">Music</a>
+                <a href="#tour" class="block py-2 hover:text-accent hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeMobileMenu()">Tour</a>
+                <a href="#contact" class="block py-2 hover:text-accent hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 bg-cover bg-center" 
+                 style="background-color: #222;">
+            </div>
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 text-center p-8 max-w-4xl">
+                <h1 class="text-6xl sm:text-7xl lg:text-9xl font-extrabold playfair mb-4 leading-tight tracking-tight shadow-text">
+                    ALKAVALI MADSLAVE
+                </h1>
+                <p class="text-xl sm:text-2xl lg:text-3xl font-light text-gray-300 mb-10 tracking-widest uppercase">
+                    DANCEHALL | REGGIE | AFRO BEATS
+                </p>
+                <a href="#music" class="inline-block px-10 py-4 text-lg sm:text-xl font-semibold bg-accent-light text-gray-900 rounded-full shadow-2xl hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                    <i data-lucide="play" class="inline-block w-6 h-6 mr-2"></i>
+                    LISTEN NOW
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Biography Section -->
+        <section id="bio" class="py-16 md:py-24 container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-12 playfair border-b-2 pb-2 inline-block border-accent">About Alkavali</h2>
+            
+            <div class="grid md:grid-cols-3 gap-10 items-center">
+                
+                <!-- Headshot Placeholder -->
+                <div class="md:col-span-1 flex justify-center">
+                    <img src="images/chiku.png" 
+                         alt="Professional headshot of Aurora Skye" 
+                         class="w-full max-w-xs md:max-w-none rounded-full object-cover shadow-2xl border-4 border-accent">
+                </div>
+
+                <!-- Bio Text -->
+                <div class="md:col-span-2 text-lg leading-relaxed text-gray-300">
+                    <p class="mb-6">
+                        ALKAVALI MADSLAVE is a critically acclaimed singer, and composer known for seamlessly blending atmospheric electronica with raw, emotional vocals and global percussion rhythms. Hailing from London, her distinctive soundscapes have garnered millions of streams and praise from publications like NME and Pitchfork.
+                    </p>
+                    <p class="mb-6">
+                        HIS debut EP with TEKKER, BETTER TOMORROW, established him as a formidable presence in the dancehall and malawi music scene. ALKAVALI MADSLAVE’s work is characterized by its cinematic scope and complex layers, creating an immersive experience that challenges genre conventions.
+                    </p>
+                    <p>
+                        Beyond the studio, ALKAVALI MADSLAVE is an electrifying live performer, transforming venues into visceral landscapes of light and sound. He continues to push the boundaries of modern music, with his highly anticipated sophomore album scheduled for release next spring.
+                    </p>
+                    <a href="#contact" class="mt-6 inline-block text-accent hover:underline font-semibold">Read the full story &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Music & Discography Section -->
+        <section id="music" class="bg-gray-800 py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl font-bold text-center mb-16 playfair border-b-2 pb-2 inline-block border-accent">The Music</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+                    <!-- Album 1 -->
+                    <div class="music-item text-center">
+                        <img src="images/tekkerz.webp" 
+                             alt="EP Cover: Better Tomorrow" 
+                             class="album-cover w-full h-auto rounded-xl mb-4 shadow-xl object-cover">
+                        <h3 class="text-xl font-semibold text-accent playfair">BETTER TOMORROW</h3>
+                        <p class="text-sm text-gray-400 mb-3">2024 | EP</p>
+                        <div class="flex justify-center space-x-3">
+                            <i data-lucide="spotify" class="w-6 h-6 text-green-500 hover:scale-110 transition cursor-pointer"></i>
+                            <i data-lucide="apple" class="w-6 h-6 text-gray-200 hover:scale-110 transition cursor-pointer"></i>
+                            <i data-lucide="youtube" class="w-6 h-6 text-red-500 hover:scale-110 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    <!-- Single 1 -->
+                    <div class="music-item text-center">
+                        <img src="images/poison.webp" 
+                             alt="Single Cover: Echo" 
+                             class="album-cover w-full h-auto rounded-xl mb-4 shadow-xl object-cover">
+                        <h3 class="text-xl font-semibold text-accent playfair">POISON</h3>
+                        <p class="text-sm text-gray-400 mb-3">2024 | Single</p>
+                        <div class="flex justify-center space-x-3">
+                            <i data-lucide="spotify" class="w-6 h-6 text-green-500 hover:scale-110 transition cursor-pointer"></i>
+                            <i data-lucide="apple" class="w-6 h-6 text-gray-200 hover:scale-110 transition cursor-pointer"></i>
+                            <i data-lucide="youtube" class="w-6 h-6 text-red-500 hover:scale-110 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    <!-- EP 1 -->
+                    <div class="music-item text-center">
+                        <img src="images/nzuzu.webp" 
+                             alt="EP Cover: The Abyss" 
+                             class="album-cover w-full h-auto rounded-xl mb-4 shadow-xl object-cover">
+                        <h3 class="text-xl font-semibold text-accent playfair">BLANTYLE TO MZUZU</h3>
+                        <p class="text-sm text-gray-400 mb-3">2022 | EP</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="https://audiomack.com/alkavalimadslave265">
+                                <i data-lucide="cloud-rain-wind" class="w-6 h-6 text-orange-500 hover:scale-110 transition cursor-pointer" title="Audiomack"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Single 2 -->
+                    <div class="music-item text-center">
+                        <img src="images/meet.webp" 
+                             alt="Single Cover: Horizon" 
+                             class="album-cover w-full h-auto rounded-xl mb-4 shadow-xl object-cover">
+                        <h3 class="text-xl font-semibold text-accent playfair">WHEN WI MEET FT TOP NOTCH</h3>
+                        <p class="text-sm text-gray-400 mb-3">2023 | Single</p>
+                        <div class="flex justify-center space-x-3">
+                             <a href="https://audiomack.com/ernestchidakwa763/song/when-wi-meet">
+                                <i data-lucide="cloud-rain-wind" class="w-6 h-6 text-orange-500 hover:scale-110 transition cursor-pointer" title="Audiomack"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://audiomack.com/alkavali" class="text-lg font-medium text-accent hover:text-yellow-500 transition duration-300 border-b border-accent pb-1">
+                        VIEW ALL DISCOGRAPHY &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tour Dates Section -->
+        <section id="tour" class="py-16 md:py-24 container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-12 playfair border-b-2 pb-2 inline-block border-accent">Tour Dates</h2>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                
+                <!-- Tour Date Item -->
+              
+
+                <div class="text-center mt-8">
+                    <p class="text-lg text-gray-400">More dates TBA soon. Follow on social media for updates.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Contact & Social Media Section -->
+        <section id="contact" class="bg-gray-900 py-16 md:py-24 border-t border-gray-700">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl font-bold text-center mb-12 playfair border-b-2 pb-2 inline-block border-accent">Connect</h2>
+
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    
+                    <!-- Social Media Links -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-3xl font-semibold mb-6 text-accent playfair">Stay Updated</h3>
+                        <p class="text-gray-300 mb-8 text-lg">
+                            Follow Alkavali Madslave on all platforms for the latest news, releases, and behind-the-scenes content.
+                        </p>
+                        <div class="flex justify-center md:justify-start space-x-6">
+                            <a href="https://www.youtube.com/@Alkavali-h5i" class="p-4 bg-gray-800 rounded-full text-white hover:bg-accent-light hover:text-gray-900 transition duration-300 transform hover:scale-110 shadow-lg" aria-label="Spotify">
+                                <i data-lucide="facebook" class="w-8 h-8"></i>
+                            </a>
+                            <a href="https://www.instagram.com/alkavalimw/?__pwa=1" class="p-4 bg-gray-800 rounded-full text-white hover:bg-accent-light hover:text-gray-900 transition duration-300 transform hover:scale-110 shadow-lg" aria-label="Instagram">
+                                <i data-lucide="instagram" class="w-8 h-8"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@Alkavali-h5i" class="p-4 bg-gray-800 rounded-full text-white hover:bg-accent-light hover:text-gray-900 transition duration-300 transform hover:scale-110 shadow-lg" aria-label="Youtube">
+                                <i data-lucide="youtube" class="w-8 h-8"></i>
+                            </a>
+                        </div>
+                        <div class="mt-8">
+                            <p class="text-gray-400">For booking and press inquiries:</p>
+                            <a href="mailto:alkavalimadslave265@gmail.com" class="text-xl text-accent hover:underline font-medium">alkavalimadslave265@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-semibold mb-6 playfair text-center">Send a Message</h3>
+                        <form action="mailto:alkavalimadslave265@gmail.com">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 text-white">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                          class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 text-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-accent-light text-gray-900 font-bold rounded-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-[1.01]">
+                                SUBMIT
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Message Box (Modal) -->
+        <div id="message-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4" onclick="hideMessage()">
+            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl max-w-sm w-full border-t-4 border-accent" onclick="event.stopPropagation()">
+                <p id="message-text" class="text-lg font-medium text-white mb-4"></p>
+                <button onclick="hideMessage()" class="w-full py-2 bg-accent-light text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition">Close</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2025 Alkavali Madslave. All Rights Reserved. | Site designed by LARBY DEVS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Message Box -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // --- Custom Message Box Logic (Replacing alert()) ---
+        const messageModal = document.getElementById('message-modal');
+        const messageText = document.getElementById('message-text');
+
+        function showMessage(message) {
+            messageText.textContent = message;
+            messageModal.classList.remove('hidden');
+        }
+
+        function hideMessage() {
+            messageModal.classList.add('hidden');
+        }
+
+        // --- Dynamic Scroll Padding for Hash Links (Optional but good practice) ---
+        // Prevents content from being hidden behind the fixed header when linking
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
